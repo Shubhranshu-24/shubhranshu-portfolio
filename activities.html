@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activities — Shubhranshu Behera</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    section.section-block { padding: 4.5rem 0; border-top: 1px solid var(--border); }
+
+    /* ── HOBBIES GRID ── */
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px; margin-top: 2rem;
+    }
+
+    /* ── COMP GRID ── */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin-top: 1.5rem;
+    }
+
+    /* ── LEADERSHIP GRID ── */
+    .leader-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px; margin-top: 1.5rem;
+    }
+
+    /* ── ACHIEVEMENT LIST ── */
+    .ach-list { display: flex; flex-direction: column; gap: 12px; margin-top: 1.5rem; }
+
+    /* ── SCORES GRID ── */
+    .scores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px; margin-top: 1.5rem;
+    }
+
+    /* ── FIRST SECTION (no top border) ── */
+    section.section-block:first-of-type { border-top: none; }
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<div class="page-wrap">
+
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">Shubhranshu <span>Behera</span></a>
+      <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="activities.html" class="active">Activities</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label hi">Beyond the lab</span>
+        <h1 class="hi2">Activities &amp;<br/><em style="color:var(--teal);">Achievements</em></h1>
+        <p class="hi3">My hobbies, digital skills, leadership roles, and recognitions — the fuller picture of who I am.</p>
+      </div>
+    </section>
+
+    <!-- ── BEYOND SCIENCE ── -->
+    <section class="section-block">
+      <div class="container">
+        <span class="section-label reveal">Beyond science</span>
+        <h2 class="reveal d1">Things I love doing</h2>
+        <p class="reveal d2" style="font-size:0.95rem;color:var(--ink-muted);margin-top:0.5rem;max-width:500px;">Science is my calling, but creativity, exploration, and technology fuel me just as much.</p>
+        <div class="hobbies-grid">
+
+          <div class="hobby-card reveal">
+            <div class="hobby-icon-img">
+              <!-- Computer / Coding icon -->
+              <img src="https://api.iconify.design/mdi/laptop.svg?color=%232D6A5E" alt="Computer Skills" />
+            </div>
+            <div class="hobby-title">Learning Computer Skills</div>
+            <div class="hobby-desc">Always picking up new tools — currently focused on React and AI integrations.</div>
+          </div>
+
+          <div class="hobby-card reveal d1">
+            <div class="hobby-icon-img">
+              <!-- Explore / Globe icon -->
+              <img src="https://api.iconify.design/mdi/earth.svg?color=%232D6A5E" alt="Exploring" />
+            </div>
+            <div class="hobby-title">Exploring New Things</div>
+            <div class="hobby-desc">Curious about everything — from science to culture to technology.</div>
+          </div>
+
+          <div class="hobby-card reveal d2">
+            <div class="hobby-icon-img">
+              <!-- Travel / Map icon -->
+              <img src="https://api.iconify.design/mdi/map-marker-path.svg?color=%232D6A5E" alt="Travelling" />
+            </div>
+            <div class="hobby-title">Travelling</div>
+            <div class="hobby-desc">Finding inspiration in new places and perspectives beyond the lab.</div>
+          </div>
+
+          <div class="hobby-card reveal d3">
+            <div class="hobby-icon-img">
+              <!-- Camera icon -->
+              <img src="https://api.iconify.design/mdi/camera.svg?color=%232D6A5E" alt="Photography" />
+            </div>
+            <div class="hobby-title">Photography</div>
+            <div class="hobby-desc">Capturing moments, patterns in nature, and the world through a lens.</div>
+          </div>
+
+          <div class="hobby-card reveal d4">
+            <div class="hobby-icon-img">
+              <!-- Video editing icon -->
+              <img src="https://api.iconify.design/mdi/video-vintage.svg?color=%232D6A5E" alt="Video Editing" />
+            </div>
+            <div class="hobby-title">Video Editing</div>
+            <div class="hobby-desc">Turning footage into stories — a creative outlet I genuinely enjoy.</div>
+          </div>
+
+          <div class="hobby-card reveal d5">
+            <div class="hobby-icon-img">
+              <!-- AI / Robot icon -->
+              <img src="https://api.iconify.design/mdi/robot-excited.svg?color=%232D6A5E" alt="AI Exploration" />
+            </div>
+            <div class="hobby-title">AI Exploration</div>
+            <div class="hobby-desc">Learning to use AI tools for research, productivity, and creative tasks daily.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DIGITAL PROFICIENCY ── -->
+    <section class="section-block">
+      <div class="container">
+        <span class="section-label reveal">Digital proficiency</span>
+        <h2 class="reveal d1">Computer Skills</h2>
+        <div class="comp-grid">
+
+          <div class="comp-card reveal">
+            <div class="comp-card-logo">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+            </div>
+            <span class="comp-pill">Python</span>
+            <div class="comp-title">Python</div>
+            <div class="comp-desc">Familiar with basics — data handling, loops, functions, and simple scripts for biological data processing.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="40%"></div></div>
+          </div>
+
+          <div class="comp-card reveal d1">
+            <div class="comp-card-logo">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+            </div>
+            <span class="comp-pill">HTML</span>
+            <div class="comp-title">HTML</div>
+            <div class="comp-desc">Strong foundational knowledge. Built this portfolio from scratch using HTML — comfortable with structure, semantics, and layout.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div>
+          </div>
+
+          <div class="comp-card reveal d2">
+            <div class="comp-card-logo">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+            </div>
+            <span class="comp-pill">CSS</span>
+            <div class="comp-title">CSS</div>
+            <div class="comp-desc">Working knowledge of CSS styling, layouts, and responsive design. Applied throughout this portfolio.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="50%"></div></div>
+          </div>
+
+          <div class="comp-card reveal d3">
+            <div class="comp-card-logo">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            </div>
+            <span class="comp-pill">React · Learning</span>
+            <div class="comp-title">React (Learning)</div>
+            <div class="comp-desc">Currently focusing on React — components, state, and building interactive UIs. Actively in progress.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="10%"></div></div>
+          </div>
+
+          <div class="comp-card reveal d4">
+            <div class="comp-card-logo">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="MS Office" />
+            </div>
+            <span class="comp-pill">MS Office</span>
+            <div class="comp-title">Microsoft &amp; Google Suite</div>
+            <div class="comp-desc">Proficient in Word, Excel, PowerPoint, Google Docs, Sheets, Slides — daily tools for academic and research work.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="75%"></div></div>
+          </div>
+
+          <div class="comp-card reveal d5">
+            <div class="comp-card-logo">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+            </div>
+            <span class="comp-pill">GitHub</span>
+            <div class="comp-title">GitHub (Beginner)</div>
+            <div class="comp-desc">Learning version control, repositories, and collaborative code management through GitHub.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="25%"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LEADERSHIP ── -->
+    <section class="section-block">
+      <div class="container">
+        <span class="section-label reveal">Leadership</span>
+        <h2 class="reveal d1">Roles &amp; Responsibilities</h2>
+        <div class="leader-grid">
+          <div class="leader-card reveal">
+            <div class="leader-badge">2025–26</div>
+            <div class="leader-title">Hostel President — Krishna Hostel</div>
+            <div class="leader-desc">Elected President of Krishna Hostel in the Hostel Executive Committee (HEC) 2025–26 at NISER. Managing hostel governance, student welfare, and inter-hostel coordination.</div>
+          </div>
+          <div class="leader-card reveal d1">
+            <div class="leader-badge">Club Leadership</div>
+            <div class="leader-title">Core Committee Member</div>
+            <div class="leader-desc">Serving on the core committee of a college club — contributing to planning, organizing events, and leading initiatives within the campus community.</div>
+          </div>
+          <div class="leader-card reveal d2">
+            <div class="leader-badge">Cultural</div>
+            <div class="leader-title">College Cultural Events</div>
+            <div class="leader-desc">Led and participated in multiple college cultural events — demonstrating organizational ability, teamwork, and the capacity to perform under pressure.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ACHIEVEMENTS & RECOGNITION ── -->
+    <section class="section-block">
+      <div class="container">
+        <span class="section-label reveal">Achievements</span>
+        <h2 class="reveal d1">Awards &amp; Recognition</h2>
+        <div class="ach-list">
+
+          <!-- Scholarship -->
+          <div class="ach-item reveal">
+            <div class="ach-type-marker">Schol&shy;ar&shy;ship</div>
+            <div>
+              <div class="ach-text">DAE – DISHA Scholar</div>
+              <div class="ach-sub">Department of Atomic Energy, Govt. of India · 2023–2028</div>
+            </div>
+          </div>
+
+          <!-- Conference -->
+          <a class="ach-item reveal d1" href="https://www.niser.ac.in/events/47aicbc/" target="_blank" rel="noopener noreferrer">
+            <div class="ach-type-marker">Confer&shy;ence</div>
+            <div>
+              <div class="ach-text">47th All India Cell Biology Conference</div>
+              <div class="ach-sub">Attended · NISER Bhubaneswar · 2024</div>
+            </div>
+            <div class="ach-link-icon">↗</div>
+          </a>
+
+          <!-- Event -->
+          <a class="ach-item reveal d2" href="https://www.niser.ac.in/~smishra/files/events/24openday.pdf" target="_blank" rel="noopener noreferrer">
+            <div class="ach-type-marker">Event</div>
+            <div>
+              <div class="ach-text">NISER Open Day 2024</div>
+              <div class="ach-sub">Participated in science outreach and public demonstration</div>
+            </div>
+            <div class="ach-link-icon">↗</div>
+          </a>
+
+          <!-- Competition -->
+          <div class="ach-item reveal d3">
+            <div class="ach-type-marker">Competi&shy;tion</div>
+            <div>
+              <div class="ach-text">QUAD-6, Ravenshaw University</div>
+              <div class="ach-sub">Participated · 2025</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COMPETITIVE SCORES
+        <div style="margin-top:3.5rem;">
+          <span class="section-label reveal">Competitive scores</span>
+          <h2 class="reveal d1" style="margin-bottom:0.4rem;">Entrance Examination Results</h2>
+          <p class="reveal d2" style="font-size:13px;color:var(--ink-muted);margin-bottom:1.5rem;">Click any card to visit the official examination website.</p>
+          <div class="scores-grid">
+            <a class="score-card-link reveal" href="https://www.nestexam.in/" target="_blank">
+              <div class="sc-num">97.5</div>
+              <div class="sc-label">NEST Percentile</div>
+              <div class="sc-sub">For NISER Admission</div>
+            </a>
+            <a class="score-card-link reveal d1" href="https://ojee.nic.in/" target="_blank">
+              <div class="sc-num">SR-18</div>
+              <div class="sc-label">OJEE State Rank</div>
+              <div class="sc-sub">Odisha JEE</div>
+            </a>
+            <a class="score-card-link reveal d2" href="https://jeemain.nta.nic.in/" target="_blank">
+              <div class="sc-num">93</div>
+              <div class="sc-label">JEE Mains %ile</div>
+              <div class="sc-sub">NTA JEE Mains</div>
+            </a>
+            <a class="score-card-link reveal d3" href="https://ouat.ac.in/" target="_blank">
+              <div class="sc-num">98</div>
+              <div class="sc-label">OUAT Percentile</div>
+              <div class="sc-sub">OUAT Entrance</div>
+            </a>
+            <a class="score-card-link reveal d4" href="https://neet.nta.nic.in/" target="_blank">
+              <div class="sc-num">530</div>
+              <div class="sc-label">NEET Score</div>
+              <div class="sc-sub">out of 720</div>
+            </a>
+          </div>
+        </div> -->
+
+        <!-- COURSEWORK -->
+        <div style="margin-top:3.5rem;">
+          <span class="section-label reveal">Coursework</span>
+          <div class="reveal d1" style="display:flex;flex-wrap:wrap;margin-top:0.75rem;">
+            <span class="tag">Biochemistry</span><span class="tag">Microbiology</span><span class="tag">Cell Biology</span>
+            <span class="tag">Molecular Biology</span><span class="tag">Animal Physiology</span><span class="tag">Plant Physiology</span>
+            <span class="tag">Ecology</span><span class="tag">Genetics</span><span class="tag">Immunology</span>
+            <span class="tag">Evolutionary Biology</span><span class="tag">Basic Inorganic Chemistry</span>
+            <span class="tag">Coordination Chemistry</span><span class="tag">Thermo &amp; Electrochemistry</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Shubhranshu Behera</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="activities.html">Activities</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="mailto:shubhranshu.behera@niser.ac.in" title="Email">
+          <img src="assets/email.png" alt="Email" />
+        </a>
+        <a href="https://www.linkedin.com/in/shubhranshubehera" target="_blank" title="LinkedIn">
+          <img src="assets/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com" target="_blank" title="GitHub">
+          <img src="assets/github.png" alt="GitHub" />
+        </a>
+        <a href="https://www.instagram.com/shubhranshu.24?igsh=MTVxOXNwcnUxMHh3Zw==" target="_blank" title="Instagram">
+          <img src="assets/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://wa.me/919668183243" target="_blank" title="WhatsApp">
+          <img src="assets/whatsapp.png" alt="WhatsApp" />
+        </a>
+      </div>
+      <div class="footer-copy">© 2025 Shubhranshu Behera · NISER Bhubaneswar</div>
+    </div>
+  </footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

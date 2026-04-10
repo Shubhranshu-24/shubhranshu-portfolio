@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Shubhranshu Behera</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-body { padding: 2rem 0 5rem; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 4rem; align-items: start;
+    }
+    @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+    .avail-chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 12px; font-family: var(--mono); color: var(--teal);
+      background: var(--teal-light); padding: 6px 14px; border-radius: 20px;
+      margin-bottom: 1.75rem;
+    }
+    .avail-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); animation: blink 2s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+
+    .collab-note { font-size: 0.96rem; color: var(--ink-muted); line-height: 1.85; margin-bottom: 2rem; max-width: 360px; }
+
+    .contact-links { display: flex; flex-direction: column; gap: 10px; }
+    .clink {
+      display: flex; align-items: center; gap: 14px;
+      padding: 0.9rem 1.2rem; background: white;
+      border: 1px solid var(--border); border-radius: 14px;
+      text-decoration: none; transition: border-color 0.2s, transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s;
+    }
+    .clink:hover { border-color: var(--teal-mid); transform: translateX(6px); box-shadow: 0 6px 20px rgba(45,106,94,0.1); }
+    .clink-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--teal-light); display: flex; align-items: center;
+      justify-content: center; font-size: 18px; flex-shrink: 0;
+      overflow: hidden;
+    }
+    .clink-icon img { width: 22px; height: 22px; object-fit: contain; }
+    .clink-label { font-size: 11px; font-family: var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 2px; }
+    .clink-value { font-size: 13px; color: var(--ink); }
+
+    /* form */
+    .form-wrap { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 2rem; }
+    .form-title { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); margin-bottom: 1.5rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    @media (max-width: 480px) { .form-grid { grid-template-columns: 1fr; } }
+    .fg { display: flex; flex-direction: column; gap: 5px; }
+    label { font-size: 11px; font-family: var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); }
+    input, textarea, select {
+      width: 100%; padding: 11px 14px;
+      border: 1px solid var(--border); border-radius: 10px;
+      background: var(--cream); font-family: var(--sans); font-size: 14px; color: var(--ink);
+      transition: border-color 0.2s, background 0.2s; outline: none; resize: vertical;
+    }
+    input:focus, textarea:focus { border-color: var(--teal-mid); background: white; }
+    textarea { min-height: 130px; }
+    .form-submit { display: flex; justify-content: flex-end; margin-top: 16px; }
+    .sbtn {
+      padding: 11px 28px; border-radius: 24px; background: var(--teal);
+      color: white; font-family: var(--sans); font-size: 14px; border: none;
+      cursor: pointer; transition: background 0.2s, transform 0.2s;
+    }
+    .sbtn:hover { background: #235348; transform: translateY(-1px); }
+    .sbtn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    #success-msg {
+      font-size: 13px; color: var(--teal); font-family: var(--mono);
+      display: none; text-align: right; margin-top: 10px;
+      background: var(--teal-light); padding: 10px 14px; border-radius: 8px;
+    }
+
+    /* Formspree note */
+    .form-note {
+      font-size: 11px; color: var(--ink-muted); font-family: var(--mono);
+      margin-top: 12px; text-align: center; opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<div class="page-wrap">
+
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">Shubhranshu <span>Behera</span></a>
+      <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="activities.html">Activities</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label hi">Get in touch</span>
+        <h1 class="hi2">Let's talk<br/><em style="color:var(--teal);">science</em></h1>
+        <p class="hi3">Whether you're a researcher, a fellow student, or someone curious about phage biology — reach out any time.</p>
+      </div>
+    </section>
+
+    <section class="contact-body">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="reveal from-left">
+            <div class="avail-chip"><span class="avail-dot"></span>Open to collaborations</div>
+            <p class="collab-note">
+              I am actively interested in research collaborations in phage genomics and bacterial immunology. If you are working in these areas and would like to exchange ideas, discuss science, or explore opportunities to work together — I would love to hear from you.
+            </p>
+
+            <div class="contact-links">
+              <a href="mailto:shubhranshu.behera@niser.ac.in" class="clink">
+                <div class="clink-icon"><img src="assets/email.png" alt="Email" /></div>
+                <div>
+                  <div class="clink-label">Email</div>
+                  <div class="clink-value">shubhranshu.behera@niser.ac.in</div>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/shubhranshubehera" target="_blank" class="clink">
+                <div class="clink-icon"><img src="assets/linkedin.png" alt="LinkedIn" /></div>
+                <div>
+                  <div class="clink-label">LinkedIn</div>
+                  <div class="clink-value">linkedin.com/in/shubhranshubehera</div>
+                </div>
+              </a>
+              <a href="https://github.com" target="_blank" class="clink">
+                <div class="clink-icon"><img src="assets/github.png" alt="GitHub" /></div>
+                <div>
+                  <div class="clink-label">GitHub</div>
+                  <div class="clink-value">@shubhranshu</div>
+                </div>
+              </a>
+              <a href="https://www.instagram.com/shubhranshu.24?igsh=MTVxOXNwcnUxMHh3Zw==" target="_blank" class="clink">
+                <div class="clink-icon"><img src="assets/instagram.png" alt="Instagram" /></div>
+                <div>
+                  <div class="clink-label">Instagram</div>
+                  <div class="clink-value">@shubhranshu.24</div>
+                </div>
+              </a>
+              <a href="https://wa.me/919668183243" target="_blank" class="clink">
+                <div class="clink-icon"><img src="assets/whatsapp.png" alt="WhatsApp" /></div>
+                <div>
+                  <div class="clink-label">WhatsApp</div>
+                  <div class="clink-value">+91 96681 83243</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="form-wrap reveal from-right">
+            <div class="form-title">Send a message</div>
+            <div class="form-grid">
+              <div class="fg">
+                <label for="name">Your name</label>
+                <input id="name" type="text" placeholder="Dr. Jane Smith" />
+              </div>
+              <div class="fg">
+                <label for="email">Email address</label>
+                <input id="email" type="email" placeholder="jane@university.edu" />
+              </div>
+            </div>
+            <div class="fg" style="margin-bottom:14px;">
+              <label for="subject">Subject</label>
+              <input id="subject" type="text" placeholder="Research collaboration / General query..." />
+            </div>
+            <div class="fg">
+              <label for="msg">Message</label>
+              <textarea id="msg" placeholder="Tell me about your research, what you're working on, or just say hello..."></textarea>
+            </div>
+            <div class="form-submit">
+              <button class="sbtn" onclick="submitForm()">Send message →</button>
+            </div>
+            <div id="success-msg">✓ Message sent — I'll get back to you soon!</div>
+            <p class="form-note">Messages are delivered directly to my inbox via Formspree.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Shubhranshu Behera</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="activities.html">Activities</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="mailto:shubhranshu.behera@niser.ac.in" title="Email">
+          <img src="assets/email.png" alt="Email" />
+        </a>
+        <a href="https://www.linkedin.com/in/shubhranshubehera" target="_blank" title="LinkedIn">
+          <img src="assets/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com" target="_blank" title="GitHub">
+          <img src="assets/github.png" alt="GitHub" />
+        </a>
+        <a href="https://www.instagram.com/shubhranshu.24?igsh=MTVxOXNwcnUxMHh3Zw==" target="_blank" title="Instagram">
+          <img src="assets/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://wa.me/919668183243" target="_blank" title="WhatsApp">
+          <img src="assets/whatsapp.png" alt="WhatsApp" />
+        </a>
+      </div>
+      <div class="footer-copy">© 2025 Shubhranshu Behera · NISER Bhubaneswar</div>
+    </div>
+  </footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
