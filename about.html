@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Shubhranshu Behera</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.1fr;
+      gap: 4rem; padding: 3rem 0 5rem; align-items: start;
+    }
+    @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+    /* portrait */
+    .portrait-area { position: sticky; top: 90px; }
+    .portrait-box {
+      background: white; border: 1px solid var(--border);
+      border-radius: 20px; aspect-ratio: 4/5;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 14px;
+      position: relative; overflow: hidden;
+    }
+    .portrait-box img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+    }
+    .portrait-box::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; z-index: 1;
+      height: 45%; background: linear-gradient(to top, rgba(45,106,94,0.45), transparent);
+    }
+    .portrait-caption {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.07em;
+      color: white; text-align: center; padding: 0 1.5rem;
+      position: absolute; bottom: 1.2rem; left: 0; right: 0;
+      z-index: 2; line-height: 1.8;
+    }
+    .origin-band {
+      background: white; border: 1px solid var(--border);
+      border-radius: 18px; padding: 1.5rem 1.75rem;
+      display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+      margin-top: 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .origin-band:hover { border-color: var(--teal-mid); box-shadow: 0 6px 18px rgba(45,106,94,0.09); }
+    .origin-pin { font-size: 1.6rem; }
+    .origin-text h3 { font-family: var(--serif); font-size: 1rem; color: var(--ink); margin-bottom: 3px; }
+    .origin-text p { font-size: 12px; color: var(--ink-muted); }
+
+    /* about text */
+    .about-text p { color: var(--ink-muted); margin-bottom: 1.2rem; font-size: 0.98rem; line-height: 1.9; }
+    .about-text p.lead { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); line-height: 1.65; margin-bottom: 1.4rem; }
+
+    .info-list { list-style: none; margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; flex-direction: column; gap: 13px; }
+    .info-list li { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; gap: 1rem; }
+    .info-list .key { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); white-space: nowrap; }
+    .info-list .val { color: var(--ink); text-align: right; }
+
+    /* hobbies */
+    .hobbies-section { border-top: 1px solid var(--border); padding: 4.5rem 0; }
+    .hobbies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-top: 2rem; }
+    .hobby-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.4rem; text-align: center;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+    }
+    .hobby-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(45,106,94,0.1); }
+    .hobby-icon { font-size: 1.75rem; margin-bottom: 10px; }
+    .hobby-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); margin-bottom: 5px; }
+    .hobby-desc { font-size: 12px; color: var(--ink-muted); line-height: 1.6; }
+
+    /* ── COMPUTER SKILLS (moved from research, no emojis) ── */
+    .section-block-about { padding: 4.5rem 0; border-top: 1px solid var(--border); }
+    .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 1.5rem; }
+    .comp-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.4rem;
+      transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s;
+    }
+    .comp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(45,106,94,0.09); }
+    .comp-title { font-family: var(--serif); font-size: 1rem; color: var(--ink); margin-bottom: 5px; }
+    .comp-desc { font-size: 12px; color: var(--ink-muted); line-height: 1.65; margin-bottom: 10px; }
+    .skill-bar { background: var(--teal-light); border-radius: 4px; overflow: hidden; }
+    .skill-bar-fill { height: 4px; background: linear-gradient(90deg, var(--teal), var(--teal-mid)); border-radius: 4px; transition: width 1.2s cubic-bezier(0.22,1,0.36,1); width: 0%; }
+
+    /* ── COMPETITIVE SCORES ── */
+    .scores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<div class="page-wrap">
+
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">Shubhranshu <span>Behera</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label hi">About me</span>
+        <!-- #5: 3rd year Int. M.Sc. in heading area -->
+        <h1 class="hi2">A curious mind<br/>from <em style="color:var(--teal);">Odisha</em></h1>
+        <p class="hi3">Scientist-in-training, creative thinker, and lifelong learner — 3rd year Int. M.Sc. student, from a small village in Balasore to NISER Bhubaneswar.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- PORTRAIT with shubu.webp (#1) -->
+        <div class="portrait-area reveal from-left">
+          <div class="portrait-box">
+            <img src="assets/shubu.webp" alt="Shubhranshu Behera" />
+            <div class="portrait-caption">
+              Shubhranshu Behera<br/>School of Biological Sciences<br/>NISER Bhubaneswar · 2025
+            </div>
+          </div>
+
+          <div class="origin-band">
+            <div class="origin-pin">📍</div>
+            <div class="origin-text">
+              <h3>From Mirigimundi, Balasore</h3>
+              <p>A small village in Odisha, India — where curiosity about the natural world first took root.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal from-right">
+          <p class="lead">
+            I'm Shubhranshu Behera, a <strong>3rd year Int. M.Sc.</strong> student in Biological Sciences at the National Institute of Science Education and Research (NISER), Bhubaneswar.
+          </p>
+          <p>
+            My academic journey has led me to the fascinating world of phage-host interactions — specifically, how bacteriophages are shaped by evolution and how bacteria fight back with immune-like mechanisms. I find science most exciting when it sits at the edge of what is known.
+          </p>
+          <p>
+            I began my scientific journey in the humble surroundings of Mirigimundi village in Balasore district, Odisha — and worked my way to one of India's premier science research institutes through hard work and a genuine love for biology and discovery.
+          </p>
+          <p>
+            Beyond the lab, I bring the same curiosity and creativity to computer skills, photography, video editing, and exploring how AI can simplify everyday work.
+          </p>
+
+          <ul class="info-list">
+            <li><span class="key">Institution</span><span class="val">NISER, Bhubaneswar</span></li>
+            <li><span class="key">Programme</span><span class="val">Int. M.Sc. Biological Sciences</span></li>
+            <!-- #5 -->
+            <li><span class="key">Year</span><span class="val">3rd Year (2025) · Int. M.Sc.</span></li>
+            <li><span class="key">Minor</span><span class="val">Chemical Sciences</span></li>
+            <li><span class="key">Research focus</span><span class="val">Phage Genomics &amp; Bacterial Immunology</span></li>
+            <li><span class="key">Origin</span><span class="val">Mirigimundi, Balasore, Odisha</span></li>
+            <li><span class="key">Hostel role</span><span class="val">President, Krishna Hostel (HEC 2025–26)</span></li>
+          </ul>
+
+          <div style="margin-top:2rem;">
+            <a href="contact.html" class="btn btn-primary">Let's connect →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PHOTOGRAPHY SHOWCASE — banner.jpg (#3) -->
+    <div class="container">
+      <span class="section-label reveal">Photography</span>
+      <h2 class="reveal d1" style="margin-bottom:1.5rem;">Through my lens</h2>
+      <div class="photo-showcase reveal from-scale">
+        <img src="assets/banner.jpg" alt="RK Beach, Visakhapatnam" />
+        <div class="photo-credit-badge">Shot by Shubhranshu</div>
+        <div class="photo-showcase-overlay">
+          <div class="photo-byline">Captured by Shubhranshu Behera</div>
+          <div class="photo-place"><em>RK Beach,</em> Visakhapatnam (VIZAG)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOBBIES -->
+    <section class="hobbies-section">
+      <div class="container">
+        <span class="section-label reveal">Beyond science</span>
+        <h2 class="reveal d1">Things I love doing</h2>
+        <div class="hobbies-grid">
+          <div class="hobby-card reveal"><div class="hobby-icon">💻</div><div class="hobby-title">Learning Computer Skills</div><div class="hobby-desc">Always picking up new tools — currently focused on React and AI integrations.</div></div>
+          <div class="hobby-card reveal d1"><div class="hobby-icon">🌍</div><div class="hobby-title">Exploring New Things</div><div class="hobby-desc">Curious about everything — from science to culture to technology.</div></div>
+          <div class="hobby-card reveal d2"><div class="hobby-icon">🧭</div><div class="hobby-title">Travelling</div><div class="hobby-desc">Finding inspiration in new places and perspectives beyond the lab.</div></div>
+          <div class="hobby-card reveal d3"><div class="hobby-icon">📷</div><div class="hobby-title">Photography</div><div class="hobby-desc">Capturing moments, patterns in nature, and the world through a lens.</div></div>
+          <div class="hobby-card reveal d4"><div class="hobby-icon">🎬</div><div class="hobby-title">Video Editing</div><div class="hobby-desc">Turning footage into stories — a creative outlet I genuinely enjoy.</div></div>
+          <div class="hobby-card reveal d5"><div class="hobby-icon">🤖</div><div class="hobby-title">AI Exploration</div><div class="hobby-desc">Learning to use AI tools for research, productivity, and creative tasks daily.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- #11–12: COMPUTER SKILLS — no emojis, on about page -->
+    <section class="section-block-about">
+      <div class="container">
+        <span class="section-label reveal">Digital proficiency</span>
+        <h2 class="reveal d1" style="margin-bottom:0.5rem;">Computer Skills</h2>
+        <div class="comp-grid">
+          <div class="comp-card reveal">
+            <span class="comp-pill">Python</span>
+            <div class="comp-title">Python</div>
+            <div class="comp-desc">Familiar with basics — data handling, loops, functions, and simple scripts for biological data processing.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="45%"></div></div>
+          </div>
+          <div class="comp-card reveal d1">
+            <span class="comp-pill">HTML</span>
+            <div class="comp-title">HTML</div>
+            <div class="comp-desc">Strong foundational knowledge. Built this portfolio from scratch using HTML — comfortable with structure, semantics, and layout.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div>
+          </div>
+          <div class="comp-card reveal d2">
+            <span class="comp-pill">CSS</span>
+            <div class="comp-title">CSS</div>
+            <div class="comp-desc">Working knowledge of CSS styling, layouts, and responsive design. Applied throughout this portfolio.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="65%"></div></div>
+          </div>
+          <div class="comp-card reveal d3">
+            <span class="comp-pill">React · Learning</span>
+            <div class="comp-title">React (Learning)</div>
+            <div class="comp-desc">Currently focusing on React — components, state, and building interactive UIs. Actively in progress.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="25%"></div></div>
+          </div>
+          <div class="comp-card reveal d4">
+            <span class="comp-pill">MS Office</span>
+            <div class="comp-title">Microsoft &amp; Google Suite</div>
+            <div class="comp-desc">Proficient in Word, Excel, PowerPoint, Google Docs, Sheets, Slides — daily tools for academic and research work.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div>
+          </div>
+          <div class="comp-card reveal d5">
+            <span class="comp-pill">GitHub</span>
+            <div class="comp-title">GitHub (Beginner)</div>
+            <div class="comp-desc">Learning version control, repositories, and collaborative code management through GitHub.</div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="35%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- #13: COMPETITIVE SCORES with exam site links -->
+    <section class="section-block-about">
+      <div class="container">
+        <span class="section-label reveal">Competitive scores</span>
+        <h2 class="reveal d1" style="margin-bottom:0.5rem;">Entrance Examination Results</h2>
+        <p class="reveal d2" style="font-size:13px;color:var(--ink-muted);margin-bottom:1.5rem;">Click any card to visit the official examination website.</p>
+        <div class="scores-grid">
+          <a class="score-card-link reveal" href="https://www.niser.ac.in/nest/" target="_blank">
+            <div class="sc-num">97.5</div>
+            <div class="sc-label">NEST Percentile</div>
+            <div class="sc-sub">For NISER Admission</div>
+          </a>
+          <a class="score-card-link reveal d1" href="https://ojee.nic.in" target="_blank">
+            <div class="sc-num">SR-18</div>
+            <div class="sc-label">OJEE State Rank</div>
+            <div class="sc-sub">Odisha JEE</div>
+          </a>
+          <a class="score-card-link reveal d2" href="https://jeemain.nta.nic.in" target="_blank">
+            <div class="sc-num">93</div>
+            <div class="sc-label">JEE Mains %ile</div>
+            <div class="sc-sub">NTA JEE Mains</div>
+          </a>
+          <a class="score-card-link reveal d3" href="https://ouat.ac.in" target="_blank">
+            <div class="sc-num">98</div>
+            <div class="sc-label">OUAT Percentile</div>
+            <div class="sc-sub">OUAT Entrance</div>
+          </a>
+          <a class="score-card-link reveal d4" href="https://neet.nta.nic.in" target="_blank">
+            <div class="sc-num">530</div>
+            <div class="sc-label">NEET Score</div>
+            <div class="sc-sub">out of 720</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Shubhranshu Behera</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="mailto:shubhranshu.behera@niser.ac.in" title="Email">
+          <img src="assets/email.png" alt="Email" />
+        </a>
+        <a href="https://www.linkedin.com/in/shubhranshubehera" target="_blank" title="LinkedIn">
+          <img src="assets/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com" target="_blank" title="GitHub">
+          <img src="assets/github.png" alt="GitHub" />
+        </a>
+        <a href="https://www.instagram.com/shubhranshu.24?igsh=MTVxOXNwcnUxMHh3Zw==" target="_blank" title="Instagram">
+          <img src="assets/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://wa.me/919668183243" target="_blank" title="WhatsApp">
+          <img src="assets/whatsapp.png" alt="WhatsApp" />
+        </a>
+      </div>
+      <div class="footer-copy">© 2025 Shubhranshu Behera · NISER Bhubaneswar</div>
+    </div>
+  </footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

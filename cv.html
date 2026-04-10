@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Shubhranshu Behera</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cv-teaser-wrap { max-width: 720px; margin: 0 auto 5rem; }
+
+    /* ── PROFILE CARD ── */
+    .cv-profile-card {
+      background: white; border: 1px solid var(--border); border-radius: 24px;
+      overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.07);
+      margin-bottom: 20px;
+    }
+    .cv-hero-band {
+      background: var(--teal); padding: 2.5rem 2rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cv-hero-band::after {
+      content: 'SB'; position: absolute; right: -8px; bottom: -12px;
+      font-family: var(--serif); font-size: 8rem; color: rgba(255,255,255,0.06);
+      line-height: 1; pointer-events: none;
+    }
+    /* #1: profile.png for CV photo */
+    .cv-avatar {
+      width: 100px; height: 100px; border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.12);
+      margin: 0 auto 1rem;
+      overflow: hidden; display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 2rem; color: white;
+    }
+    .cv-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .cv-name { font-family: var(--serif); font-size: 1.6rem; color: white; margin-bottom: 4px; position: relative; z-index: 1; }
+    .cv-role { font-size: 12px; color: rgba(255,255,255,0.65); font-family: var(--mono); letter-spacing: 0.06em; position: relative; z-index: 1; }
+
+    /* ── QUICK FACTS ── */
+    .cv-facts {
+      padding: 1.5rem 2rem; display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .cv-fact { text-align: center; }
+    .cv-fact-num { font-family: var(--serif); font-size: 1.4rem; color: var(--teal); }
+    .cv-fact-label { font-size: 11px; font-family: var(--mono); color: var(--ink-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
+
+    /* ── MINI SECTIONS ── */
+    .cv-mini-section { padding: 0 2rem 1.75rem; border-top: 1px solid var(--border); padding-top: 1.75rem; }
+    .cv-mini-section:last-child { padding-bottom: 2rem; }
+    .cv-mini-title {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 1rem;
+      padding-bottom: 6px; border-bottom: 2px solid var(--teal-light);
+    }
+    .cv-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 12px; }
+    .cv-row:last-child { margin-bottom: 0; }
+    .cv-row-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .cv-row-sub { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
+    .cv-date-pill { font-family: var(--mono); font-size: 11px; color: var(--teal); background: var(--teal-light); padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+
+    .cv-tag-sm { display: inline-block; font-size: 10px; font-family: var(--mono); padding: 3px 9px; border-radius: 12px; border: 1px solid var(--border); color: var(--ink-muted); margin: 2px; }
+
+    /* ── CTA STRIP ── */
+    .cv-cta-strip {
+      background: white; border: 1px solid var(--border); border-radius: 20px;
+      padding: 2rem 2.5rem; text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .cv-cta-strip p { font-size: 13px; color: var(--ink-muted); max-width: 340px; line-height: 1.7; }
+
+    /* ── BLURRED TEASER ── */
+    .cv-blur-hint {
+      background: white; border: 1px dashed var(--border); border-radius: 14px;
+      padding: 1.25rem 1.75rem; margin-top: 12px;
+      filter: blur(3px); pointer-events: none; user-select: none;
+      opacity: 0.5;
+    }
+    .cv-blur-caption {
+      text-align: center; font-family: var(--mono); font-size: 11px;
+      color: var(--teal); letter-spacing: 0.07em; margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<div class="page-wrap">
+
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">Shubhranshu <span>Behera</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html" class="active">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label hi">Curriculum Vitae</span>
+        <h1 class="hi2">My academic<br/>profile</h1>
+        <p class="hi3">A quick snapshot — reach out for the full CV.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="cv-teaser-wrap">
+
+        <!-- PROFILE CARD -->
+        <div class="cv-profile-card reveal">
+          <div class="cv-hero-band">
+            <!-- #1: profile.png -->
+            <div class="cv-avatar">
+              <img src="assets/profile.png" alt="Shubhranshu Behera" />
+            </div>
+            <div class="cv-name">Shubhranshu Behera</div>
+            <div class="cv-role">3rd Year · Int. M.Sc. Biological Sciences · NISER Bhubaneswar</div>
+          </div>
+
+          <!-- QUICK FACTS -->
+          <div class="cv-facts">
+            <div class="cv-fact">
+              <div class="cv-fact-num">97.5</div>
+              <div class="cv-fact-label">NEST Percentile</div>
+            </div>
+            <div class="cv-fact">
+              <div class="cv-fact-num">2</div>
+              <div class="cv-fact-label">Internships</div>
+            </div>
+            <div class="cv-fact">
+              <div class="cv-fact-num">DAE</div>
+              <div class="cv-fact-label">DISHA Scholar</div>
+            </div>
+          </div>
+
+          <!-- EDUCATION — minimal -->
+          <div class="cv-mini-section">
+            <div class="cv-mini-title">Education</div>
+            <div class="cv-row">
+              <div>
+                <div class="cv-row-title">Int. M.Sc. in Biological Sciences</div>
+                <div class="cv-row-sub">NISER, Bhubaneswar · Minor: Chemical Sciences</div>
+              </div>
+              <div class="cv-date-pill">2023 – Present</div>
+            </div>
+            <div class="cv-row">
+              <div>
+                <div class="cv-row-title">Higher Secondary — CHSE Odisha</div>
+                <div class="cv-row-sub">Fakir Mohan Higher Secondary School, Balasore · 82%</div>
+              </div>
+              <div class="cv-date-pill">2021 – 2023</div>
+            </div>
+          </div>
+
+          <!-- RESEARCH EXPERIENCE — minimal -->
+          <div class="cv-mini-section">
+            <div class="cv-mini-title">Research Experience</div>
+            <div class="cv-row">
+              <div>
+                <div class="cv-row-title">Evolutionary Ecology Lab · NISER</div>
+                <div class="cv-row-sub">Supervisor: Dr. Rittik Deb · Field cricket reproductive behaviour</div>
+              </div>
+              <div class="cv-date-pill">May–Jul 2025</div>
+            </div>
+            <div class="cv-row">
+              <div>
+                <div class="cv-row-title">Organic Synthesis Lab · NISER</div>
+                <div class="cv-row-sub">Supervisor: Dr. S. Peruncheralathan · Thiophene derivatives</div>
+              </div>
+              <div class="cv-date-pill">Jun–Jul 2024</div>
+            </div>
+          </div>
+
+          <!-- KEY SKILLS — minimal -->
+          <div class="cv-mini-section">
+            <div class="cv-mini-title">Key Skills</div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px;">
+              <span class="cv-tag-sm">PCR</span>
+              <span class="cv-tag-sm">Gel Electrophoresis</span>
+              <span class="cv-tag-sm">Western Blot</span>
+              <span class="cv-tag-sm">Flow Cytometry</span>
+              <span class="cv-tag-sm">ELISA</span>
+              <span class="cv-tag-sm">Python</span>
+              <span class="cv-tag-sm">HTML / CSS</span>
+            </div>
+          </div>
+
+          <!-- SCHOLARSHIP — minimal -->
+          <div class="cv-mini-section">
+            <div class="cv-mini-title">Scholarship &amp; Recognition</div>
+            <div class="cv-row">
+              <div>
+                <div class="cv-row-title">DAE – DISHA Scholar</div>
+                <div class="cv-row-sub">Department of Atomic Energy, Govt. of India</div>
+              </div>
+              <div class="cv-date-pill">2023 – 2028</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLURRED "teaser" of more content -->
+        <div class="cv-blur-hint reveal d1">
+          <div style="height:14px;background:var(--cream);border-radius:4px;margin-bottom:8px;width:70%;"></div>
+          <div style="height:10px;background:var(--cream);border-radius:4px;margin-bottom:6px;width:90%;"></div>
+          <div style="height:10px;background:var(--cream);border-radius:4px;width:55%;"></div>
+        </div>
+        <div class="cv-blur-caption reveal d2">Full CV has more — request it below</div>
+
+        <!-- #14: CTA — "Request Actual CV →" -->
+        <div class="cv-cta-strip reveal d3">
+          <p>Want a copy? Reach out via email or LinkedIn and I'll share my latest CV.</p>
+          <a href="contact.html" class="btn btn-primary">Request Actual CV →</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+    <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Shubhranshu Behera</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="mailto:shubhranshu.behera@niser.ac.in" title="Email">
+          <img src="assets/email.png" alt="Email" />
+        </a>
+        <a href="https://www.linkedin.com/in/shubhranshubehera" target="_blank" title="LinkedIn">
+          <img src="assets/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com" target="_blank" title="GitHub">
+          <img src="assets/github.png" alt="GitHub" />
+        </a>
+        <a href="https://www.instagram.com/shubhranshu.24?igsh=MTVxOXNwcnUxMHh3Zw==" target="_blank" title="Instagram">
+          <img src="assets/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://wa.me/919668183243" target="_blank" title="WhatsApp">
+          <img src="assets/whatsapp.png" alt="WhatsApp" />
+        </a>
+      </div>
+      <div class="footer-copy">© 2025 Shubhranshu Behera · NISER Bhubaneswar</div>
+    </div>
+  </footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
