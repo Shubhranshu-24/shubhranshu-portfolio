@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shubhranshu Behera — Life Sciences Researcher</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HERO ── */
+    .hero {
+      padding: 7rem 0 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-layout {
+      display: grid; grid-template-columns: 1fr 420px;
+      gap: 3rem; align-items: center;
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-img-col { display: none; }
+    }
+    .hero-img-col { position: relative; }
+    .hero-img-wrap {
+      border-radius: 24px; overflow: hidden;
+      aspect-ratio: 4/5; position: relative;
+      box-shadow: 0 24px 60px rgba(45,106,94,0.18);
+      border: 1px solid var(--border);
+    }
+    .hero-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .hero-img-wrap:hover img { transform: scale(1.04); }
+    .hero-img-badge {
+      position: absolute; bottom: 1.25rem; left: 50%; transform: translateX(-50%);
+      background: rgba(45,106,94,0.85); color: white;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 6px 16px; border-radius: 20px;
+      white-space: nowrap; backdrop-filter: blur(6px);
+    }
+    .hero h1 { max-width: 720px; margin-bottom: 1.5rem; }
+    .hero h1 em { font-style: italic; color: var(--teal); }
+    .hero-desc {
+      max-width: 520px; color: var(--ink-muted);
+      font-size: 1.05rem; margin-bottom: 2.5rem; line-height: 1.85;
+    }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ── STATS ── */
+    .stat-row {
+      display: flex; gap: 3.5rem; margin-top: 4rem;
+      padding-top: 3rem; border-top: 1px solid var(--border); flex-wrap: wrap;
+    }
+    .stat-num {
+      font-family: var(--serif); font-size: 2.2rem; color: var(--ink);
+      display: block; line-height: 1; margin-bottom: 4px;
+    }
+    .stat-item:hover .stat-num { color: var(--teal); transition: color 0.3s; }
+    .stat-label { font-size: 12px; color: var(--ink-muted); letter-spacing: 0.04em; }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights { padding: 5rem 0; }
+    .highlights-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;
+    }
+    .hcard {
+      background: white; border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.75rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+    }
+    .hcard::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: linear-gradient(90deg, var(--teal), var(--teal-mid));
+      transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left;
+    }
+    .hcard:hover::after { transform: scaleX(1); }
+    .hc-title { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); margin-bottom: 8px; }
+    .hc-desc { font-size: 13px; color: var(--ink-muted); line-height: 1.75; margin-bottom: 14px; }
+    .hc-links { display: flex; flex-direction: column; gap: 6px; }
+    .hc-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-family: var(--mono); letter-spacing: 0.04em;
+      color: var(--teal); text-decoration: none;
+      padding: 5px 10px; border: 1px solid var(--teal-mid);
+      border-radius: 20px; transition: background 0.2s, transform 0.2s;
+      width: fit-content;
+    }
+    .hc-link:hover { background: var(--teal-light); transform: translateX(3px); }
+
+    /* hero eyebrow */
+    .hero-eyebrow {
+      font-family: var(--mono); font-size: 12px;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal);
+      margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 28px; height: 1.5px; background: var(--teal-mid);
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 4.5rem 0 3.5rem; }
+      .stat-row { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<div class="page-wrap">
+
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">Shubhranshu <span>Behera</span></a>
+      <nav id="nav-menu">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="activities.html">Activities</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="container">
+        <div class="hero-layout">
+          <div class="hero-text-col">
+        <div class="hero-eyebrow hi">Research Student · NISER Bhubaneswar</div>
+        <h1 class="hi2">
+          Exploring the world<br/>of <em>Phage Genomics</em><br/>&amp; <em>Bacterial Immunity</em>
+        </h1>
+        <p class="hero-desc hi3">
+          I am <strong style="color:var(--teal);">Shubhranshu Behera</strong> — a 3rd year Int. M.Sc. student in Biological Sciences from Mirigimundi, Balasore, Odisha. Fascinated by the molecular dialogue between bacteriophages and bacterial immune systems.
+        </p>
+        <div class="hero-cta hi4">
+          <a href="research.html" class="btn btn-primary">View my Work →</a>
+          <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+        </div>
+
+        <div class="stat-row hi5">
+          <div class="stat-item">
+            <span class="stat-num">3rd</span>
+            <span class="stat-label">Year · Int. M.Sc.</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="2" data-suffix="">2</span>
+            <span class="stat-label">Summer Internships</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">DAE</span>
+            <span class="stat-label">DISHA Scholar</span>
+          </div>
+        </div>
+          </div><!-- /.hero-text-col -->
+          <div class="hero-img-col hi2">
+            <div class="hero-img-wrap">
+              <img src="assets/infection.jpg" alt="Phage-Bacteria Infection" />
+              
+            </div>
+          </div>
+        </div><!-- /.hero-layout -->
+      </div>
+    </section>
+
+    <!-- NISER STRIP — background image via assets/NISER.jpg -->
+    <div class="container">
+      <div class="inst-strip reveal">
+        <div class="inst-strip-bg-img" style="background-image:url('assets/NISER.jpg'); opacity:0.45 !important;"></div>
+        <div style="display:flex;align-items:center;gap:1.25rem;position:relative;z-index:1;">
+          <img src="assets/National_Institute_of_Science_Education_and_Research.svg"
+               alt="NISER Logo"
+               style="width:56px;height:56px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.9;flex-shrink:0;" />
+          <div>
+            <div class="inst-label">Currently studying at</div>
+            <div class="inst-name">National Institute of Science Education and Research</div>
+            <div class="inst-sub">NISER, Bhubaneswar · Int. M.Sc. in Biological Sciences</div>
+          </div>
+        </div>
+        <a href="https://www.niser.ac.in" target="_blank">Visit NISER ↗</a>
+      </div>
+    </div>
+
+    <section class="highlights">
+      <div class="container">
+        <div class="highlights-header">
+          <div>
+            <span class="section-label reveal">What I do</span>
+            <h2 class="reveal d1">Areas of focus</h2>
+          </div>
+          <a href="research.html" class="btn btn-outline reveal">Learn more →</a>
+        </div>
+        <div class="cards-grid">
+          <div class="hcard reveal">
+            <div class="hc-title">Phage Genomics</div>
+            <div class="hc-desc">Investigating the genomic architecture of bacteriophages and how phage diversity shapes host-range specificity and infection dynamics.</div>
+            <div class="hc-links">
+              <a href="https://le.ac.uk/lemid/strategic-areas/bacteriophages/phage-genomics" target="_blank" class="hc-link">Know more ↗ (LEMID)</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12302716/" target="_blank" class="hc-link">Know more ↗ (PMC Review)</a>
+            </div>
+          </div>
+          <div class="hcard reveal d1">
+            <div class="hc-title">Bacterial Immunology</div>
+            <div class="hc-desc">Studying immune-like mechanisms in bacteria — CRISPR-Cas systems, restriction-modification pathways — and how they resist phage infection.</div>
+            <div class="hc-links">
+              <a href="https://www.nature.com/articles/s41423-020-00532-4" target="_blank" class="hc-link">Know more ↗ (Nature Immunology)</a>
+              <a href="https://www.nature.com/articles/s41564-024-01840-5" target="_blank" class="hc-link">Know more ↗ (Nature Microbiology)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Shubhranshu Behera</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="activities.html">Activities</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="/cdn-cgi/l/email-protection#42312a37202a30232c312a376c20272a273023022c2b3127306c23216c2b2c" title="Email">
+          <img src="assets/email.png" alt="Email" />
+        </a>
+        <a href="https://www.linkedin.com/in/shubhranshubehera" target="_blank" title="LinkedIn">
+          <img src="assets/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com" target="_blank" title="GitHub">
+          <img src="assets/github.png" alt="GitHub" />
+        </a>
+        <a href="https://www.instagram.com/shubhranshu.24?igsh=MTVxOXNwcnUxMHh3Zw==" target="_blank" title="Instagram">
+          <img src="assets/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://wa.me/919668183243" target="_blank" title="WhatsApp">
+          <img src="assets/whatsapp.png" alt="WhatsApp" />
+        </a>
+      </div>
+      <div class="footer-copy">© 2025 Shubhranshu Behera · NISER Bhubaneswar</div>
+    </div>
+  </footer>
+<script src="main.js"></script>
+</div>
+</body>
+</html>
